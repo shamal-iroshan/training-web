@@ -1,0 +1,26 @@
+input:focus {
+    border: none;
+    outline: none;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+.txt-title {
+    border-radius: 50px;
+    border: none;
+    padding-left: 20px;
+    margin-top: 2px;
+    height: 30px;
+    background: #0274f7;
+    color: #fff;
+    width: 80%;
+}
+
+.btn-submit {
+    border-radius: 50px;
+    border: none;
+    height: 30px;
+}
