@@ -1,0 +1,23 @@
+.Home-title{
+    font-size: 45px;
+    font-weight: 700;
+    color: #fff;
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.form-container{
+    width: 100%;
+    padding: 0 13%;
+}
+
+.card-container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: repeat(1,1fr);
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}

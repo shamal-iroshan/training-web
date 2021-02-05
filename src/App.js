@@ -1,11 +1,27 @@
 import React from 'react';
-import DiaryCard from './components/DiaryCard';
+import DiaryHome from './pages/DiaryHome';
+import Login from './pages/Login';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-        <DiaryCard />
+      <Router>
+        <Switch>
+          <Route path="/Home">
+            <DiaryHome />
+          </Route>
+          <Route path="/">
+            <Login />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
