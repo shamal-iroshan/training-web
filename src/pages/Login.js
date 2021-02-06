@@ -4,13 +4,14 @@ import Button from '@material-ui/core/Button';
 import Arrow from '@material-ui/icons/ArrowForward';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../utils/LoginStyle.css';
 
 
 let state = 'disabled';
 
 class Login extends Component {
+
     render() {
         return (
             <div className="container">
@@ -32,7 +33,7 @@ class Login extends Component {
                     <Button variant="contained" color="primary" onClick={this.getName} className="btn-random">Random</Button>
                 </div>
                 <Link to="/Home"> 
-                    <Button variant="contained" color="primary" endIcon= {<Arrow/>} className="btn-continue" onClick={this.navigate} >Continue</Button>
+                    <Button variant="contained" color="primary" endIcon= {<Arrow/>} className="btn-continue" onClick={e => this.navigate(e)} >Continue</Button>
                 </Link>
             </div>
         )
@@ -41,14 +42,14 @@ class Login extends Component {
     getName(){
         let names = ['Joan', 'Joshep', 'Emmett', 'Brian', 'Lowery'];
         let rand = Math.floor(Math.random() * 4);
-        console.log(rand);
 
         let nameBox = document.getElementById("name");
         nameBox.value = names[rand];
     }
 
-    navigate(){
-        
+    navigate = (e) => {
+        let user = document.getElementById("name").value;
+        document.cookie = "user="+user;
     }
 }
 
