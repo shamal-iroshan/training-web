@@ -6,22 +6,24 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/Home">
-            <DiaryHome />
-          </Route>
-          <Route path="/">
-            <Login />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route path="/Home">
+              <DiaryHome />
+            </Route>
+            <Route path="/">
+              <Login />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
   );
 }
 
