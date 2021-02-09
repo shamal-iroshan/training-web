@@ -1,13 +1,19 @@
-import { ADD_TODO } from './actions';
-import { todos } from './states';
+import { ADD_TODO } from "./actions";
+import produce from "immer";
 
-export let reducer = (state = todos, action) => {
-    let newToDos;
+const initState = {
+  todos: [],
+};
+
+export let reducer = (state = initState, action) => {
+  let newToDos;
+
+  return produce(state, (draft) => {
     switch (action.type) {
-        case ADD_TODO:
-            newToDos = [...state];
-            newToDos.push(action.payload);
-            return newToDos;
+      case ADD_TODO:
+        newToDos = [...draft.todos];
+        newToDos.push(action.payload);
+        draft.todos = newToDos;
     }
-    return state;
-}
+  });
+};
