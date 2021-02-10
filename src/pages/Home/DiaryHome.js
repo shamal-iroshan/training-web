@@ -1,8 +1,8 @@
 import React from "react";
-import InputForm from "../components/InputForm";
-import CardList from "../components/CardList";
-import "../utils/InputFormStyle.css";
-import "../utils/DiaryHomeStyle.css";
+import InputForm from "../../components/InputForm";
+import CardList from "../../components/CardList";
+import "../../utils/InputFormStyle.css";
+import "../../utils/DiaryHomeStyle.css";
 
 function DiaryHome() {
   return (

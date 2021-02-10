@@ -2,7 +2,7 @@ import {
   call,
   takeEvery, // select, take were removed
 } from "redux-saga/effects";
-import { firestore } from "../firebase/firbase";
+import { firestore } from "./firbase";
 import { ADD_TODO } from "./actions";
 
 async function addtodoAsync(todo) {

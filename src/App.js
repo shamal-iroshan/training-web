@@ -1,6 +1,6 @@
 import React from "react";
-import DiaryHome from "./pages/DiaryHome";
-import Login from "./pages/Login";
+import DiaryHome from "./pages/Home/DiaryHome";
+import Login from "./pages/Login/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 

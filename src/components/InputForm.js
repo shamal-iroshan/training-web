@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import { addTodo } from "../redux/actions";
+import { addTodo } from "../pages/Home/actions";
 import { v1 as uuid } from "uuid";
 import { useDispatch } from "react-redux";
-import { getUser } from "../utils/user";
+import { getUser } from "../pages/Login/user";
 import "../utils/InputFormStyle.css";
 
 function InputForm({ user }) {

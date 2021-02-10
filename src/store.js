@@ -1,5 +1,5 @@
 // import { createStore } from 'redux';
-import { reducer } from "./reducer";
+import { reducer } from "./pages/Home/reducer";
 
 // export let store = createStore(reducer);
 
@@ -11,7 +11,7 @@ import { connectRouter } from "connected-react-router";
 import { firestoreReducer } from "redux-firestore";
 import { firebaseReducer } from "react-redux-firebase";
 import { all, fork } from "redux-saga/effects";
-import { addToDoSagas } from "../redux/saga";
+import { addToDoSagas } from "./pages/Home/saga";
 
 export const history = createBrowserHistory();
 const rootReducer = combineReducers({
