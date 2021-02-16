@@ -7,6 +7,7 @@ import { firestoreConnect, withFirebase } from "react-redux-firebase";
 import "../utils/DiaryHomeStyle.css";
 
 function CardList({ todos, todoSnaps }) {
+
   if (!todoSnaps) {
     return (
       <div>
@@ -23,7 +24,7 @@ function CardList({ todos, todoSnaps }) {
   );
 }
 
-const mapStateToProps = ({ todoReducer, firestore, userReduce }) => {
+const mapStateToProps = ({ todoReducer, firestore }) => {
   return {
     todos: todoReducer.todos,
     todoSnaps: firestore.ordered["posts"],

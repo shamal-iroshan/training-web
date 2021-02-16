@@ -10,6 +10,9 @@ import "../../utils/LoginStyle.css";
 
 function Login() {
     let [user, setUser] = useState("");
+    let state = {
+        disabledInfo: false
+    };
 
     return (
         <div className="container">
@@ -19,7 +22,13 @@ function Login() {
                     className="txt-name"
                     id="name"
                     label="Enter your nick name"
-                    onChange={(e) => setUser(e.target.value)}
+                    value={user}
+                    onChange={
+                        (e) => {
+                            setUser(e.target.value);
+                            setDisable(e.target.value);
+                        }
+                    }
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
@@ -40,6 +49,7 @@ function Login() {
             </div>
             <Link to="/Home">
                 <Button
+                    disabled={state.disabledInfo}
                     variant="contained"
                     color="primary"
                     endIcon={<Arrow/>}
@@ -53,14 +63,24 @@ function Login() {
             </Link>
         </div>
     );
-}
 
-function getName() {
-    let names = ["Joan", "Joshep", "Emmett", "Brian", "Lowery"];
-    let rand = Math.floor(Math.random() * 4);
+    function getName() {
+        let names = ["Joan", "Josep", "Emmett", "Brian", "Lowery"];
+        let rand = Math.floor(Math.random() * 4);
 
-    let nameBox = document.getElementById("name");
-    nameBox.value = names[rand];
+        setUser(names[rand]);
+
+        // let nameBox = document.getElementById("name");
+        // nameBox.value = names[rand];
+    }
+
+    function setDisable(val) {
+        if (val === '') {
+            state.disabledInfo = true;
+        } else {
+            state.disabledInfo = false;
+        }
+    }
 }
 
 export default Login;

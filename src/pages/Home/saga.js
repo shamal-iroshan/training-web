@@ -9,18 +9,21 @@ async function addtodoAsync(todo) {
   const docref = firestore.collection("posts").doc();
   await docref.set(todo);
 }
+
 export function* add_todo(action) {
   try {
     yield call(addtodoAsync, action.payload);
-    // yield put(loginUserSuccess(data));
     console.log("success");
   } catch (e) {
-    // yield put(loginUserError(e));
     console.log(e.message);
   }
 }
+
 // Individual exports for testing
-function* getAddToDoSagas() {
+function* setAddToDoSagas() {
   yield takeEvery(ADD_TODO, add_todo);
 }
-export const addToDoSagas = [getAddToDoSagas];
+// function* getAllAddTodoSagas() {
+//   yield takeEvery()
+// }
+export const addToDoSagas = [setAddToDoSagas];

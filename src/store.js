@@ -1,8 +1,5 @@
 // import { createStore } from 'redux';
 import { reducer } from "./pages/Home/reducer";
-
-// export let store = createStore(reducer);
-
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { routerMiddleware } from "connected-react-router";

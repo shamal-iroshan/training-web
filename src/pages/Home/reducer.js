@@ -1,4 +1,4 @@
-import { ADD_TODO } from "./actions";
+import { ADD_TODO, GET_TODO } from "./actions";
 import produce from "immer";
 
 const initState = {
